@@ -1,0 +1,21 @@
+extends layout
+block content
+  #display.w3-card-4.modal.w3-animate-top(style=" width:100%; height=100%; overflow: auto; ")
+      .w3-container.w3-blue-grey
+          h2.w3-center Administração e Exploração de Bases de Dados
+            a(href='/users').button.w3-button.w3-left.w3-grey.w3-round-xxlarge.w3-text-white(style="padding: 2px 10px;") Anterior
+            a(href='/').button.w3-button.w3-right.w3-grey.w3-round-xxlarge.w3-text-white(style="padding: 2px 10px;") Página Inicial
+  h4.w3-center API para Monitorização de uma Base de Dados Oracle
+    .w3-container.w3-blue-grey.w3-border
+      h3.w3-center.w3-bold <b>Dados do User "#{user[0].NOME}"</b>  
+    .w3-container.w3-blue-grey.w3-border.w3-center
+    table.w3-table.w3-bordered
+        tr
+          th.w3-center ID LIGA
+          th.w3-center NOME
+          th.w3-center ANO
+        each u in user
+            tr
+                td.w3-center #{u.ID_LIGA}
+                td.w3-center #{u.NOME}
+                td.w3-center #{u.ANO_FUNDACAO}
