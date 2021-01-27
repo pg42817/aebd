@@ -1,6 +1,0 @@
-SELECT ss.sid, ROUND (value/100) "CPU Usage",ss.value FROM v$session se, v$sesstat ss, v$statname st
-WHERE ss.statistic# = st.statistic# AND name LIKE  '%CPU used by this session%' AND se.sid = ss.SID  AND se.username IS NOT NULL
-
-SELECT ROUND (used.bytes / 1024 / 1024, 2) used_mb FROM (SELECT SUM (bytes) bytes FROM v$sgastat WHERE name != 'free memory') used
-       
-       
