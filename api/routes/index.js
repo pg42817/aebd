@@ -28,7 +28,6 @@ router.get('/user/:id', function(req, res) {
   .then(dados => res.render('user',{user:dados}))
   .catch(e => res.status(500).jsonp({error: e}))
 });
-
 router.get('/activities', function(req, res) {
   Query.activity()
   .then(dados => res.render('activities',{activity:dados}))

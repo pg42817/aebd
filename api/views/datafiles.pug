@@ -9,14 +9,30 @@ block content
     .w3-container.w3-blue-grey.w3-border.w3-center
     table.w3-table.w3-bordered
         tr
-          th.w3-center ID CLUBE
+          th.w3-center ID Datafile
           th.w3-center NOME
-          th.w3-center ANO
-          th.w3-center CIDADE
+          th.w3-center Max Size
+          th.w3-center Used Size
+          th.w3-center Auto Extend
+          th.w3-center Free Size
+          th.w3-center Status
+          th.w3-center ID Tablespaces
+          th.w3-center Timestamp
         each d in datafiles
             tr
-                td.w3-center #{d.ID_CLUBE}
+                td.w3-center #{d.IDDATAFILE}
                 td.w3-center 
-                    a(href='/datafile/'+d.ID_CLUBE)=d.NOME
-                td.w3-center #{d.ANO_FUNDACAO}
-                td.w3-center #{d.CIDADE}
+                    a(href='/datafile/'+d.IDDATAFILE)=d.NOME
+                td.w3-center #{d.MAX_SIZE}
+                td.w3-center #{d.USED_SIZE}
+                td.w3-center #{d.AUTO_EXTEND}
+                td.w3-center #{d.FREE_SIZE}
+                td.w3-center #{d.STATUS}
+                td.w3-center 
+                  a(href='/tablespace/'+d.IDTABLESPACES)=d.IDTABLESPACES
+                td.w3-center #{d.TIMESTAMP}
+      footer.w3-large.w3-theme-d1
+        address
+            b Feito por Grupo 4 - AEBD
+            br
+            <img src="/images/1.png" alt="logo uminho" width="100" height="90">

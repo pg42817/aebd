@@ -33,37 +33,56 @@ block content
                  a(href='/activities') Activity
             .w3-container.w3-border.w3-topbar.w3-bottombar.w3-border-grey
               each a in activity
-                p ID Cargo : #{a.ID_CARGO}
-                p Nome Cargo : #{a.DESC_CARGO}  
+                p <b>ID Activity :</b>  #{a.IDACTIVITY}
+                p <b>Memória :</b>  #{a.MEMORY}  
+                p <b>CPU :</b>  #{a.CPU}
+                p <b>Sessão :</b>  #{a.SESSIONS}  
+                p <b>Timestamp :</b>  #{a.TIMESTAMP}
           div(style={float:"left",width:"25%"})
             .w3-container.w3-blue-grey
               h2.w3-center
                 a(href='/datafiles') Datafiles
             .w3-container.w3-border.w3-topbar.w3-bottombar.w3-border-grey
               each d in datafiles
-                p ID CLUBE : #{d.ID_CLUBE}
-                p Nome  : #{d.NOME}
-                p Ano : #{d.ANO_FUNDACAO}
-                p Cidade : #{d.CIDADE}
+                p <b>ID Datafile :</b>  #{d.IDDATAFILE}
+                p <b>Nome  :</b>  #{d.NOME}
+                p <b>Max Size :</b>  #{d.MAX_SIZE}
+                p <b>Used Size :</b>  #{d.USED_SIZE}
+                p <b>Auto Extend :</b>  #{d.AUTO_EXTEND}
+                p <b>Free Size  :</b>  #{d.FREE_SIZE}
+                p <b>Status :</b>  #{d.STATUS}
+                p <b>ID Tablespace :</b>  #{d.IDTABLESPACES}
+                p <b>Timestamp :</b>  #{d.TIMESTAMP}
           div(style={float:"left",width:"25%"})
             .w3-container.w3-blue-grey
               h2.w3-center 
                 a(href='/tablespaces') Tablespaces
             .w3-container.w3-border.w3-topbar.w3-bottombar.w3-border-grey
               each t in tablespaces
-                p ID JOGADOR : #{t.ID_JOGADOR}
-                p Nome  : #{t.NOME}
-                p Idade : #{t.IDADE}
-                p Cidade : #{t.CIDADE}
+                p <b>ID Tablespace :</b>  #{t.IDTABLESPACES}
+                p <b>Nome  :</b>  #{t.NOME}
+                p <b>Max Size :</b>  #{t.MAX_SIZE}
+                p <b>Free Size :</b>  #{t.FREE_SIZE}
+                p <b>Used Size :</b>  #{t.USED_SIZE}
+                p <b>Status  :</b>  #{t.STATUS}
+                p <b>Tipo :</b>  #{t.TIPO}
+                p <b>Timestamp :</b>  #{t.Timestamp}
           div(style={float:"left",width:"25%"})
             .w3-container.w3-blue-grey
               h2.w3-center 
                 a(href='/users') Users
             .w3-container.w3-border.w3-topbar.w3-bottombar.w3-border-grey
               each u in users
-                p ID clube : #{u.ID_LIGA}
-                p Nome  : #{u.NOME}
-                p Ano Fundação : #{u.ANO_FUNDACAO}
+                p <b>ID User :</b>  #{u.ID_USER}
+                p <b>Nome  :</b>  #{u.NOME}
+                p <b>Estado :</b>  #{u.ESTADO}
+                p <b>Data Criação :</b>  #{u.DATA_CRIAÇÃO}
+                p <b>Data Expiração  :</b>  #{u.DATA_EXPIRAÇÃO}
+                p <b>Profile :</b>  #{u.PROFILE}
+                p <b>Tablespace  :</b>  #{u.TABLESPACE}
+                p <b>Timestamp :</b>  #{u.TIMESTAMP}
     footer.w3-large.w3-theme-d1
         address
             b Feito por Grupo 4 - AEBD
+            br
+            <img src="/images/1.png" alt="logo uminho" width="100" height="90"> 

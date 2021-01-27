@@ -9,14 +9,27 @@ block content
     .w3-container.w3-blue-grey.w3-border.w3-center
     table.w3-table.w3-bordered
         tr
-          th.w3-center ID JOGADOR
+          th.w3-center ID Tablespaces
           th.w3-center NOME
-          th.w3-center IDADE
-          th.w3-center CIDADE
+          th.w3-center Max Size
+          th.w3-center Free Size
+          th.w3-center Used Size
+          th.w3-center Status
+          th.w3-center Tipo
+          th.w3-center Timestamp
         each t in tablespaces
             tr
-                td.w3-center #{t.ID_JOGADOR}
-                td.w3-center
-                    a(href='/tablespace/'+t.ID_JOGADOR)=t.NOME
-                td.w3-center #{t.IDADE}
-                td.w3-center #{t.CIDADE}
+                td.w3-center #{t.IDTABLESPACES}
+                td.w3-center 
+                   a(href='/tablespace/'+t.IDTABLESPACES)=t.NOME
+                td.w3-center #{t.MAX_SIZE}
+                td.w3-center #{t.FREE_SIZE}
+                td.w3-center #{t.USED_SIZE}
+                td.w3-center #{t.STATUS}
+                td.w3-center #{t.TIPO}
+                td.w3-center #{t.Timestamp}
+      footer.w3-large.w3-theme-d1
+        address
+            b Feito por Grupo 4 - AEBD
+            br
+            <img src="/images/1.png" alt="logo uminho" width="100" height="90">
