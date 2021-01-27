@@ -1,0 +1,16 @@
+select A.contents,A.tablespace_name,trunc(B.MAXSIZE/1024/1024) Max_sizeMB,trunc(decode(B.autoextensible,'YES',B.MAXSIZE-B.bytes+C.free,'NO',C.free)/1024/1024) free_mb,(trunc(B.MAXSIZE/1024/1024))-(trunc(decode(B.autoextensible,'YES',B.MAXSIZE-B.bytes+C.free,'NO',C.free)/1024/1024)) used_mb,A.status,(SELECT SYSDATE FROM DUAL) data
+from(select * from dba_tablespaces) A,
+(select file_id, file_name,
+            tablespace_name,
+            autoextensible,
+            bytes,
+            decode(autoextensible,'YES',maxbytes,bytes) maxsize from dba_data_files) B,
+(SELECT file_id,
+             tablespace_name,
+             sum(bytes) free
+      FROM   dba_free_space
+      GROUP BY file_id,
+               tablespace_name
+      ) C
+where B.tablespace_name=A.tablespace_name
+AND b.file_id=c.file_id(+)

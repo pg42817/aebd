@@ -1,0 +1,10 @@
+SELECT
+    USER_ID,
+    USERNAME,
+    account_status,
+    created,
+    expiry_date,
+    profile,
+    default_tablespace
+    FROM DBA_USERS;
+    
