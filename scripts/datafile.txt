@@ -1,0 +1,5 @@
+SELECT distinct df.file_name, df.max_size_mb,(df.max_size_mb)-(f.free_mb) used_mb,DBA_DATA_FILES.autoextensible,f.free_mb,V$DATAFILE.status,DBA_DATA_FILES.tablespace_name,(SELECT SYSDATE FROM DUAL) data FROM (SELECT file_id, file_name, tablespace_name,TRUNC(bytes/1024/1024) AS size_mb,TRUNC(GREATEST(bytes,maxbytes)/1024/1024) AS max_size_mb FROM dba_data_files) df,(SELECT TRUNC(SUM(bytes)/1024/1024) AS free_mb, file_id FROM dba_free_space GROUP BY file_id) f
+inner join DBA_DATA_FILES on DBA_DATA_FILES.file_id=f.file_id
+inner join V$DATAFILE on V$DATAFILE.file#=f.file_id
+WHERE  df.file_id = f.file_id 
+
